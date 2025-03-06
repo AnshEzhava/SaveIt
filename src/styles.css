@@ -27,6 +27,7 @@
 }
 
 body {
-  width: 270px;
-  height: 423px;
+  width: 280px;
+  height: 433px;
+  background-color: var(--backgroud-color);
 }
