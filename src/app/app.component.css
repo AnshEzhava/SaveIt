@@ -1,0 +1,39 @@
+@import url("../styles.css");
+
+.content {
+  padding: 10px;
+  color: var(--font-color);
+  width: 100%;
+  height: 100%;
+  background-color: var(--backgroud-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header p {
+  font-family: var(--archivo);
+  font-size: 36px;
+}
+
+.add_folder {
+  display: flex;
+  align-items: center;
+  border-radius: 10%;
+}
+
+.add_folder:hover {
+  background-color: var(--button-hover-color);
+}
+
+.add_folder:active {
+  background-color: var(--button-active-color);
+}
+
+.add_folder img {
+  width: 32px;
+  height: 32px;
+}

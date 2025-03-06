@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Archivo Black";
+  src: url("../assets/fonts/ArchivoBlack-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+}
+
+:root {
+  --backgroud-color: #222831;
+  --button-hover-color: #393e46;
+  --button-active-color: #31363f;
+  --font-color: #76abae;
+  --trash-color: #ff6a6a;
+  --options-color: #eeeeee;
+  --archivo: "Archivo Black";
+  --inter: "Inter";
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 270px;
+  height: 423px;
+}
