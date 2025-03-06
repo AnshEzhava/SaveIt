@@ -20,23 +20,29 @@
   font-size: 36px;
 }
 
-.add_folder {
+.btn {
   display: flex;
   align-items: center;
   border-radius: 10%;
 }
 
-.add_folder:hover {
+.btn:hover {
   background-color: var(--button-hover-color);
 }
 
-.add_folder:active {
+.btn:active {
   background-color: var(--button-active-color);
 }
 
 .add_folder img {
   width: 32px;
   height: 32px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .search-box {

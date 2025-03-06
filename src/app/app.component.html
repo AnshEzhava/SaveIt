@@ -1,12 +1,15 @@
 <div class="content">
   <div class="header">
     <p>SaveIt</p>
-    <div #addFolder class="add_folder">
+    <div #addFolder class="add_folder btn">
       <img src="../assets/images/new_folder.png" />
     </div>
   </div>
   <div class="main-content">This is main content area</div>
   <div class="footer">
     <input type="text" #search class="search-box" placeholder="Search" />
+    <div class="github btn" #github (click)="openGithub()">
+      <img src="../assets/images/github-logo.png" />
+    </div>
   </div>
 </div>
