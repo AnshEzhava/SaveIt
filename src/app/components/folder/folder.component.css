@@ -1,17 +1,64 @@
 @import url("../../../styles.css");
 
+.folder {
+  font-family: var(--inter);
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: var(--button-active-color);
+  height: 48px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
 .open-folder img {
-    width: 30px;
-    height: 30px;
-    border: 10%;
+  width: 30px;
+  height: 30px;
+  border: 10%;
 }
 
-.open-folder{
-    width: fit-content;
-    height: fit-content;
+.open-folder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10%;
 }
 
-.open-folder:hover{
-    background-color: var(--button-hover-color);
+.open-folder:hover {
+  background-color: var(--button-hover-color);
+}
+
+.open-folder:active {
+  background-color: var(--button-active-color);
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+}
+
+.options img {
+  width: 25px;
+  height: 25px;
+}
+
+.options:hover {
+  background-color: var(--button-hover-color);
+}
+
+.options:active {
+  background-color: var(--button-active-color);
+}
+
+.folder-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

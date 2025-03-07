@@ -39,7 +39,11 @@
 }
 
 .body {
-  height: 100%;
+  height: 324.75px;
+}
+
+.folders {
+  padding: 5px;
 }
 
 .footer {
