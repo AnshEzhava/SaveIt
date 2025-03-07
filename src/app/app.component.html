@@ -1,12 +1,14 @@
 <div class="content">
   <div class="header">
     <p>SaveIt</p>
-    <div class="add_folder btn" (click)="(activePage === 'addfolder')">
-      <img src="../assets/images/new_folder.png" />
+    <div class="add_folder btn">
+      <img src="../assets/images/new_folder.png" (click)="addFolder()" />
     </div>
   </div>
   <div class="body">
-    <div *ngIf="activePage === 'addFolder'" class="addfolder">Add Folder</div>
+    <div *ngIf="activePage === 'addFolder'" class="addfolder">
+      <p>Hello This is Add Folder Div</p>
+    </div>
   </div>
   <div class="footer">
     <input type="text" #search class="search-box" placeholder="Search" />
