@@ -1,0 +1,17 @@
+@import url("../../../styles.css");
+
+
+.open-folder img {
+    width: 30px;
+    height: 30px;
+    border: 10%;
+}
+
+.open-folder{
+    width: fit-content;
+    height: fit-content;
+}
+
+.open-folder:hover{
+    background-color: var(--button-hover-color);
+}
