@@ -1,0 +1,31 @@
+@import url("../../../styles.css");
+
+.content {
+  font-family: var(--inter);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.folder-name {
+  width: 14.8125rem;
+  height: 2.375rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  background: #31363f;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: var(--options-color);
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+}

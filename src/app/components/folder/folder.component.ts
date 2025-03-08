@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './folder.component.html',
   styleUrl: './folder.component.css',
 })
-export class FolderComponent {}
+export class FolderComponent {
+  expandFolder() {
+    console.log('Folder expanded');
+  }
+}
