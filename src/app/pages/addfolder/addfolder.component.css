@@ -29,3 +29,10 @@
   font-style: normal;
   font-weight: 700;
 }
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 14.8125rem;
+}
