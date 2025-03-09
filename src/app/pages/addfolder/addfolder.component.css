@@ -36,3 +36,24 @@
   justify-content: space-between;
   width: 14.8125rem;
 }
+
+.btn {
+  border-radius: 10px;
+  width: 47px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--options-color);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.btn-cancel {
+  font-size: 10px;
+  background-color: var(--trash-color);
+}
+
+.btn-go {
+  background-color: var(--font-color);
+}
