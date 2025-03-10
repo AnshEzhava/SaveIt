@@ -20,7 +20,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.navService.activePage$.subscribe((page) => {
       this.activePage = page;
-      console.log('Active page changed:', this.activePage);
     });
   }
 
@@ -35,7 +34,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   addFolder() {
-    console.log('add folder');
     this.navService.setActivePage('addFolder');
   }
 }
