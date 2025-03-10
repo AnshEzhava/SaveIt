@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class NavService {
-  private activePageSubject = new BehaviorSubject<string>('home');
+  private activePageSubject = new BehaviorSubject<string>('folders');
   activePage$ = this.activePageSubject.asObservable();
 
   setActivePage(page: string) {
