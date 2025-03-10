@@ -1,19 +1,28 @@
-<div class="folder" (click)="expandFolder()">
+<div class="folder">
   <div class="open-folder">
-    <img src="../../../assets/images/folder.png" />
+    <img src="../../../assets/images/folder.png" (click)="expandFolder()" />
   </div>
   <div class="folder-name">
-    <p>Name</p>
+    <p>{{ folderName }}</p>
   </div>
   <div class="folder-options">
     <div class="open-links options">
-      <img src="../../../assets/images/open.png" />
+      <img
+        src="../../../assets/images/open.png"
+        (click)="handleAddLink(folderName)"
+      />
     </div>
     <div class="add-link options">
-      <img src="../../../assets/images/add.png" />
+      <img
+        src="../../../assets/images/add.png"
+        (click)="handleOpenLinks(folderName)"
+      />
     </div>
     <div class="delete-folder options">
-      <img src="../../../assets/images/delete.png" />
+      <img
+        src="../../../assets/images/delete.png"
+        (click)="handleDeleteFolder(folderName)"
+      />
     </div>
   </div>
 </div>

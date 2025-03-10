@@ -44,6 +44,14 @@
 
 .folders {
   padding: 5px;
+  max-height: 100%;
+  overflow: scroll;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.folders::-webkit-scrollbar {
+  display: none;
 }
 
 .footer {

@@ -1,14 +1,72 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { FolderService, Folder } from '../../services/folder.service';
+import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-folder',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './folder.component.html',
   styleUrl: './folder.component.css',
 })
-export class FolderComponent {
+export class FolderComponent implements OnInit, OnDestroy {
+  folders: Folder[] = [];
+  private subscription: Subscription | undefined;
+
+  @Input() folderName: string = '';
+  @Output() openLinksEvent = new EventEmitter<string>();
+  @Output() addLinkEvent = new EventEmitter<string>();
+  @Output() deleteFolderEvent = new EventEmitter<string>();
+
+  isExpanded: boolean = false;
+
+  constructor(private folderService: FolderService) {}
+
+  ngOnInit(): void {
+    this.subscription = this.folderService.folders$.subscribe((folders) => {
+      this.folders = folders;
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
   expandFolder() {
-    console.log('Folder expanded');
+    this.isExpanded = !this.isExpanded;
+  }
+
+  openLinks() {
+    this.openLinksEvent.emit(this.folderName);
+  }
+
+  addLink() {
+    this.addLinkEvent.emit(this.folderName);
+  }
+
+  deleteFolder() {
+    this.deleteFolderEvent.emit(this.folderName);
+  }
+
+  handleOpenLinks(folderName: string) {
+    this.openLinksEvent.emit(folderName);
+  }
+
+  handleAddLink(folderName: string) {
+    this.addLinkEvent.emit(folderName);
+  }
+
+  handleDeleteFolder(folderName: string) {
+    this.deleteFolderEvent.emit(folderName);
   }
 }

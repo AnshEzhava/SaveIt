@@ -9,9 +9,14 @@
     <div *ngIf="activePage === 'addFolder'" class="addfolder">
       <app-addfolder></app-addfolder>
     </div>
-    <div *ngIf="activePage === 'addLink'" class="addLink"></div>
     <div *ngIf="activePage === 'folders'" class="folders">
-      <app-folder></app-folder>
+      <app-folder
+        *ngFor="let folder of folders"
+        [folderName]="folder.name"
+        (openLinksEvent)="handleOpenLinks(folder.name)"
+        (addLinkEvent)="handleAddLink(folder.name)"
+        (deleteFolderEvent)="handleDeleteFolder(folder.name)"
+      ></app-folder>
     </div>
   </div>
   <div class="footer">

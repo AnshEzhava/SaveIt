@@ -1,8 +1,19 @@
 <div class="content">
   <p class="title">Add Folder</p>
-  <input type="text" class="folder-name" placeholder="Name" />
+  <label for="folderName">Folder Name:</label>
+  <input
+    type="text"
+    id="folderName"
+    class="folder-name"
+    placeholder="Name"
+    [(ngModel)]="folderName"
+    #folderNameInput="ngModel"
+    required
+  />
   <div class="options">
     <div class="btn-cancel btn" (click)="handleGoBack()">Cancel</div>
-    <div class="btn-go btn">Go</div>
+    <div class="btn-go btn" (click)="createFolder(folderNameInput.value)">
+      Go
+    </div>
   </div>
 </div>
