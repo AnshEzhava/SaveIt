@@ -47,15 +47,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
   handleOpenLinks(folderName: string) {
     console.log(`Open links for ${folderName}`);
-    // Implement logic to open links
+    // TODO: Implement logic to open links
   }
 
   handleAddLink(folderName: string) {
     console.log(`Add link to ${folderName}`);
-    // Implement logic to add link
+    // TODO: Implement logic to add link
   }
 
   handleDeleteFolder(folderName: string) {
+    //TODO: Remove Debugging
     console.log(`Delete folder ${folderName}`);
     this.folderService.deleteFolderFromLocalStorage(folderName);
   }
