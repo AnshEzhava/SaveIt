@@ -10,7 +10,7 @@
 }
 
 :root {
-  --backgroud-color: #222831;
+  --background-color: #222831;
   --button-hover-color: #393e46;
   --button-active-color: #31363f;
   --font-color: #76abae;
@@ -29,5 +29,5 @@
 body {
   width: 280px;
   height: 433px;
-  background-color: var(--backgroud-color);
+  background-color: var(--background-color);
 }

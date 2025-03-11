@@ -56,10 +56,12 @@
 
 .footer {
   padding: 5px;
+  padding-top: 15px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--background-color);
 }
 
 .search-box {
