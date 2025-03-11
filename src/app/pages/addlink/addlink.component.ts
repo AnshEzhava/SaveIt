@@ -29,5 +29,6 @@ export class AddlinkComponent {
   }
   handleGoBack() {
     this.navService.setActivePage('folders');
+    localStorage.removeItem('linkToFolder');
   }
 }
