@@ -1,0 +1,32 @@
+@import url("../../../styles.css");
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--options-color);
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  color: var(--options-color);
+}
+
+.title {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.url {
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

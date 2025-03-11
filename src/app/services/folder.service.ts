@@ -48,6 +48,12 @@ export class FolderService {
     return storedFolders ? JSON.parse(storedFolders) : [];
   }
 
+  getLinksForFolder(folderName: string): Link[] {
+    const currentFolders = this.foldersSubject.getValue();
+    const folder = currentFolders.find((folder) => folder.name === folderName);
+    return folder ? folder.links : [];
+  }
+
   addLinksToFolder(folderName: string, link: Link) {
     const currentFolders = this.foldersSubject.getValue();
     const updatedFolders = currentFolders.map((folder) => {

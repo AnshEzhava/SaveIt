@@ -10,11 +10,12 @@ import { FolderService, Folder, Link } from '../../services/folder.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { LinkComponent } from '../link/link.component';
 
 @Component({
   selector: 'app-folder',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, LinkComponent],
   templateUrl: './folder.component.html',
   styleUrl: './folder.component.css',
 })
