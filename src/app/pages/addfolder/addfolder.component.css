@@ -2,11 +2,11 @@
 
 .content {
   font-family: var(--inter);
-  width: 100%;
+  width: calc(100% - 10px);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .title {
@@ -17,7 +17,7 @@
 }
 
 .folder-name {
-  width: 16.8125rem;
+  width: calc(100% - 10px);
   height: 2.375rem;
   flex-shrink: 0;
   border-radius: 0.625rem;

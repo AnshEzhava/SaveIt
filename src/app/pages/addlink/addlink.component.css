@@ -16,7 +16,7 @@
 }
 
 .inputBox {
-  width: 16.8125rem;
+  width: calc(100% - 10px);
   height: 2.375rem;
   flex-shrink: 0;
   border-radius: 0.625rem;
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 14.8125rem;
+  width: 100%;
 }
 
 .btn {
