@@ -7,6 +7,7 @@
   border-bottom: 1px solid var(--options-color);
   padding-left: 7px;
   padding-right: 7px;
+  height: 35px;
 }
 
 .text-content {
@@ -29,4 +30,33 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45px;
+}
+
+.edit-img {
+  width: 20px;
+  height: 20px;
+  border-radius: 10%;
+}
+
+.edit-img:hover {
+  background-color: var(--button-hover-color);
+  cursor: pointer;
+}
+
+.delete-img {
+  width: 20px;
+  height: 20px;
+  border-radius: 10%;
+}
+
+.delete-img:hover {
+  background-color: var(--button-hover-color);
+  cursor: pointer;
 }
