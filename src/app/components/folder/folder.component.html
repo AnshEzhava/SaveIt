@@ -1,6 +1,10 @@
 <div class="folder">
   <div class="open-folder">
-    <img src="../../../assets/images/folder.png" (click)="expandFolder()" />
+    <img
+      src="../../../assets/images/folder.png"
+      alt="Folder Icon"
+      (click)="expandFolder()"
+    />
   </div>
   <div class="folder-name">
     <p>{{ folderName }}</p>
@@ -23,6 +27,18 @@
         src="../../../assets/images/delete.png"
         (click)="handleDeleteFolder(folderName)"
       />
+    </div>
+  </div>
+
+  <div *ngIf="isExpanded">
+    <div *ngFor="let folder of folders">
+      <div *ngIf="folder.name === folderName">
+        <ul>
+          <li *ngFor="let link of folder.links">
+            <a [href]="link.url" target="_blank">{{ link.title }}</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

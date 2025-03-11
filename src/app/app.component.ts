@@ -2,14 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FolderComponent } from './components/folder/folder.component';
 import { AddfolderComponent } from './pages/addfolder/addfolder.component';
-import { FolderService, Folder } from './services/folder.service';
+import { FolderService, Folder, Link } from './services/folder.service';
 import { NavService } from './services/nav.service';
 import { Subscription } from 'rxjs';
+import { AddlinkComponent } from './pages/addlink/addlink.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FolderComponent, AddfolderComponent],
+  imports: [
+    CommonModule,
+    FolderComponent,
+    AddfolderComponent,
+    AddlinkComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -52,7 +58,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   handleAddLink(folderName: string) {
     console.log(`Add link to ${folderName}`);
-    // TODO: Implement logic to add link
+    localStorage.setItem('linkToFolder', folderName);
+    this.navService.setActivePage('addLink');
   }
 
   handleDeleteFolder(folderName: string) {

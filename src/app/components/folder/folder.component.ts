@@ -6,19 +6,21 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FolderService, Folder } from '../../services/folder.service';
+import { FolderService, Folder, Link } from '../../services/folder.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-folder',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './folder.component.html',
   styleUrl: './folder.component.css',
 })
 export class FolderComponent implements OnInit, OnDestroy {
   folders: Folder[] = [];
+  newLink: Link = { title: '', url: '' };
   private subscription: Subscription | undefined;
 
   @Input() folderName: string = '';

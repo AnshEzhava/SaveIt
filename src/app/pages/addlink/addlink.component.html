@@ -1,1 +1,30 @@
-<p>addlink works!</p>
+<div class="content">
+  <label for="folderName" class="title">Add Folder</label>
+  <input
+    type="text"
+    id="linkTitle"
+    class="linkTitle"
+    placeholder="Title"
+    [(ngModel)]="linkTitle"
+    #linkTitleInput="ngModel"
+    required
+  />
+  <input
+    type="text"
+    id="linkURL"
+    class="linkURL"
+    placeholder="Link"
+    [(ngModel)]="linkURL"
+    #linkURLInput="ngModel"
+    required
+  />
+  <div class="options">
+    <div class="btn-cancel btn" (click)="handleGoBack()">Cancel</div>
+    <div
+      class="btn-go btn"
+      (click)="addLinkToFolder(linkTitleInput.value, linkURLInput.value)"
+    >
+      Go
+    </div>
+  </div>
+</div>

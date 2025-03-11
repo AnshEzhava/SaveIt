@@ -18,6 +18,9 @@
         (deleteFolderEvent)="handleDeleteFolder(folder.name)"
       ></app-folder>
     </div>
+    <div *ngIf="activePage === 'addLink'" class="addLink">
+      <app-addlink></app-addlink>
+    </div>
   </div>
   <div class="footer">
     <input type="text" class="search-box" placeholder="Search" />

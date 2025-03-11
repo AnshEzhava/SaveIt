@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+export interface Link {
+  title: string;
+  url: string;
+}
+
 export interface Folder {
   name: string;
+  links: Link[];
 }
 
 @Injectable({
@@ -21,7 +27,7 @@ export class FolderService {
 
   addFolder(folderName: string) {
     const currentFolders = this.foldersSubject.getValue();
-    const newFolder: Folder = { name: folderName };
+    const newFolder: Folder = { name: folderName, links: [] };
     this.foldersSubject.next([...currentFolders, newFolder]);
   }
 
@@ -40,5 +46,16 @@ export class FolderService {
   getFoldersFromLocalStorage(): Folder[] {
     const storedFolders = localStorage.getItem('folders');
     return storedFolders ? JSON.parse(storedFolders) : [];
+  }
+
+  addLinksToFolder(folderName: string, link: Link) {
+    const currentFolders = this.foldersSubject.getValue();
+    const updatedFolders = currentFolders.map((folder) => {
+      if (folder.name === folderName) {
+        return { ...folder, links: [...folder.links, link] };
+      }
+      return folder;
+    });
+    this.foldersSubject.next(updatedFolders);
   }
 }
