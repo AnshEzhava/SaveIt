@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FolderService, Link } from '../../services/folder.service';
+import { Folder, FolderService, Link } from '../../services/folder.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,5 +16,9 @@ export class LinkComponent {
 
   ngOnInit() {
     this.links = this.folderService.getLinksForFolder(this.folderName);
+  }
+
+  deleteLink(folderName: string, link: Link) {
+    this.folderService.deleteLinksFromFolder(folderName, link);
   }
 }

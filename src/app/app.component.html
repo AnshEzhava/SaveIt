@@ -11,7 +11,7 @@
     </div>
     <div *ngIf="activePage === 'folders'" class="folders">
       <app-folder
-        *ngFor="let folder of folders"
+        *ngFor="let folder of filteredFolders"
         [folderName]="folder.name"
         (openLinksEvent)="handleOpenLinks(folder.name)"
         (addLinkEvent)="handleAddLink(folder.name)"
@@ -23,7 +23,12 @@
     </div>
   </div>
   <div class="footer">
-    <input type="text" class="search-box" placeholder="Search" />
+    <input
+      type="text"
+      class="search-box"
+      placeholder="Search"
+      (input)="onSearchChange($event)"
+    />
     <div class="github btn" (click)="openGithub()">
       <img src="../assets/images/github-logo.png" />
     </div>

@@ -20,6 +20,8 @@ import { AddlinkComponent } from './pages/addlink/addlink.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit, OnDestroy {
+  searchTerm: string = '';
+  filteredFolders: Folder[] = [];
   folders: Folder[] = [];
   constructor(
     private navService: NavService,
@@ -34,6 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
     });
     this.folderService.folders$.subscribe((folders) => {
       this.folders = folders;
+      this.filterFolders();
     });
   }
 
@@ -41,6 +44,22 @@ export class AppComponent implements OnInit, OnDestroy {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+
+  filterFolders() {
+    if (this.searchTerm === '') {
+      this.filteredFolders = [...this.folders];
+      return;
+    }
+
+    this.filteredFolders = this.folders.filter((folder) =>
+      folder.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+
+  onSearchChange(event: any) {
+    this.searchTerm = event.target.value;
+    this.filterFolders();
   }
 
   openGithub() {

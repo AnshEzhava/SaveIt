@@ -64,4 +64,21 @@ export class FolderService {
     });
     this.foldersSubject.next(updatedFolders);
   }
+
+  deleteLinksFromFolder(folderName: string, link: Link) {
+    const currentFolders = this.foldersSubject.getValue();
+    const updatedFolders = currentFolders.map((folder) => {
+      if (folder.name === folderName) {
+        return {
+          ...folder,
+          links: folder.links.filter(
+            (currentLink) =>
+              currentLink.title !== link.title && currentLink.url !== link.url
+          ),
+        };
+      }
+      return folder;
+    });
+    this.foldersSubject.next(updatedFolders);
+  }
 }
