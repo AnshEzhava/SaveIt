@@ -50,9 +50,26 @@
   font-weight: 700;
 }
 
+.btn:hover {
+  background-color: var(--cyan-hover-color);
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: var(--cyan-active-color);
+}
+
 .btn-cancel {
   font-size: 10px;
   background-color: var(--trash-color);
+}
+
+.btn-cancel:hover {
+  background-color: var(--red-hover-color);
+}
+
+.btn-cancel:active {
+  background-color: var(--red-active-color);
 }
 
 .btn-go {

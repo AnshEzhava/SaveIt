@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FolderComponent } from './components/folder/folder.component';
 import { AddfolderComponent } from './pages/addfolder/addfolder.component';
-import { FolderService, Folder, Link } from './services/folder.service';
+import { FolderService, Folder } from './services/folder.service';
 import { NavService } from './services/nav.service';
 import { Subscription } from 'rxjs';
 import { AddlinkComponent } from './pages/addlink/addlink.component';
@@ -76,14 +76,11 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   handleAddLink(folderName: string) {
-    console.log(`Add link to ${folderName}`);
     localStorage.setItem('linkToFolder', folderName);
     this.navService.setActivePage('addLink');
   }
 
   handleDeleteFolder(folderName: string) {
-    //TODO: Remove Debugging
-    console.log(`Delete folder ${folderName}`);
     this.folderService.deleteFolderFromLocalStorage(folderName);
   }
 }

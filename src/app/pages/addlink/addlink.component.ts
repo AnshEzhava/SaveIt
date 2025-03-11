@@ -31,4 +31,7 @@ export class AddlinkComponent {
     this.navService.setActivePage('folders');
     localStorage.removeItem('linkToFolder');
   }
+  handleCopyLink() {
+    // TODO: impl logic
+  }
 }

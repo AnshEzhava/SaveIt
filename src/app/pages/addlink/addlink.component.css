@@ -47,11 +47,35 @@
   color: var(--options-color);
   font-size: 14px;
   font-weight: 700;
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: var(--cyan-hover-color);
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: var(--cyan-active-color);
 }
 
 .btn-cancel {
   font-size: 10px;
   background-color: var(--trash-color);
+}
+
+.btn-cancel:hover {
+  background-color: var(--red-hover-color);
+}
+
+.btn-cancel:active {
+  background-color: var(--red-active-color);
+}
+
+.btn-copy-link {
+  width: 100px;
+  font-size: xx-small;
+  background-color: var(--font-color);
 }
 
 .btn-go {
