@@ -2,6 +2,7 @@
 
 .content {
   font-family: var(--inter);
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -16,7 +17,7 @@
 }
 
 .folder-name {
-  width: 14.8125rem;
+  width: 16.8125rem;
   height: 2.375rem;
   flex-shrink: 0;
   border-radius: 0.625rem;
@@ -34,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 14.8125rem;
+  width: 100%;
 }
 
 .btn {
