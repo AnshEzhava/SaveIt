@@ -1,27 +1,41 @@
-# SaveIt
+# SaveIt - A Simple Link Saving App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+This Angular-powered browser extension isn't just about organizing your tabs; it's a performance booster too! By grouping and closing unused tabs, you free up valuable RAM, making your browsing smoother and more responsive.  Declutter your browser and enjoy a faster, more efficient online experience.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Create folders to categorize your links.
+* Add links with titles and URLs to each folder.
+* Expand and collapse folders to view their contents.
+* Search for folders by name.
+* Basic UI with a dark theme.
+* Data persistence using local storage.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Angular
+* TypeScript
+* HTML
+* CSS
 
-## Build
+## How to Build
+1. Clone the repository: `git clone https://github.com/AnshEzhava/SaveIt.git`
+2. Install the dependencies: `npm install`
+3. Build the Extension: `npm build`
+4. Go into the browser, load unpacked extension and select `browser` inside the `dist/save-it` directory.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Future Enhancements
 
-## Running unit tests
+* Implement link editing and deletion.
+* Improve the UI with more styling and visual feedback.
+* Add error handling for invalid URLs and other edge cases.
+* Implement more advanced search functionality.
+* Add user authentication and cloud storage for data synchronization.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contributing
 
-## Running end-to-end tests
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## License
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project is licensed under the MIT License.
