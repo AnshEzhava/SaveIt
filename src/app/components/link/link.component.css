@@ -60,3 +60,7 @@
   background-color: var(--button-hover-color);
   cursor: pointer;
 }
+
+.options img:active {
+  background-color: var(--button-active-color);
+}
