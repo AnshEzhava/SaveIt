@@ -14,6 +14,7 @@ import { FolderService } from '../../services/folder.service';
 export class AddlinkComponent {
   linkTitle: string = '';
   linkURL: string = '';
+  isInvalid: boolean = false;
 
   constructor(
     private navService: NavService,
@@ -21,6 +22,10 @@ export class AddlinkComponent {
   ) {}
 
   addLinkToFolder(linkTitle: string, linkURL: string) {
+    if (linkTitle.trim() === '' || linkURL.trim() === '') {
+      this.isInvalid = true;
+      return;
+    }
     const folderName = localStorage.getItem('linkToFolder') || '';
     const newLink = { title: linkTitle, url: linkURL };
     this.folderService.addLinksToFolder(folderName, newLink);

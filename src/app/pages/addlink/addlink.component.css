@@ -50,6 +50,15 @@
   margin: 10px;
 }
 
+.error {
+  display: none;
+  color: var(--trash-color);
+}
+
+.error.invalid {
+  display: contents;
+}
+
 .btn:hover {
   background-color: var(--cyan-hover-color);
   cursor: pointer;
