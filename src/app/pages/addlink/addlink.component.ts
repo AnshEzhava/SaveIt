@@ -1,3 +1,6 @@
+/// <reference types="chrome" />
+// idk how the above works, but it just does, so refrain asking
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -37,6 +40,11 @@ export class AddlinkComponent {
     localStorage.removeItem('linkToFolder');
   }
   handleCopyLink() {
-    // TODO: impl logic
+    console.log('Hello');
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (tabs && tabs[0] && tabs[0].url) {
+        this.linkURL = tabs[0].url;
+      }
+    });
   }
 }
