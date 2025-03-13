@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 export interface Link {
   title: string;
   url: string;
+  displayURL: string;
 }
 
 export interface Folder {
@@ -63,6 +64,12 @@ export class FolderService {
       return folder;
     });
     this.foldersSubject.next(updatedFolders);
+  }
+
+  displayURLFormatter(url: string, displayURL: string) {
+    const fullURL = new URL(url);
+    displayURL = fullURL.hostname.replace(/^www\./, '');
+    return displayURL;
   }
 
   deleteLinksFromFolder(folderName: string, link: Link) {

@@ -21,7 +21,7 @@ import { LinkComponent } from '../link/link.component';
 })
 export class FolderComponent implements OnInit, OnDestroy {
   folders: Folder[] = [];
-  newLink: Link = { title: '', url: '' };
+  newLink: Link = { title: '', url: '', displayURL: '' };
   private subscription: Subscription | undefined;
 
   @Input() folderName: string = '';

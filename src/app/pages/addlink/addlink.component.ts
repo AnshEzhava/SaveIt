@@ -1,8 +1,8 @@
 /// <reference types="chrome" />
-// idk how the above works, but it just does, so refrain asking
+// apparently this is needed for chrome.tabs.url to work...
 
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NavService } from '../../services/nav.service';
 import { FolderService } from '../../services/folder.service';
@@ -17,11 +17,13 @@ import { FolderService } from '../../services/folder.service';
 export class AddlinkComponent {
   linkTitle: string = '';
   linkURL: string = '';
+  displayURL: string = '';
   isInvalid: boolean = false;
 
   constructor(
     private navService: NavService,
-    private folderService: FolderService
+    private folderService: FolderService,
+    private ngZone: NgZone
   ) {}
 
   addLinkToFolder(linkTitle: string, linkURL: string) {
@@ -30,7 +32,14 @@ export class AddlinkComponent {
       return;
     }
     const folderName = localStorage.getItem('linkToFolder') || '';
-    const newLink = { title: linkTitle, url: linkURL };
+    const newLink = {
+      title: linkTitle,
+      url: linkURL,
+      displayURL: this.folderService.displayURLFormatter(
+        linkURL,
+        this.displayURL
+      ),
+    };
     this.folderService.addLinksToFolder(folderName, newLink);
     this.navService.setActivePage('folders');
     localStorage.removeItem('linkToFolder');
@@ -40,10 +49,12 @@ export class AddlinkComponent {
     localStorage.removeItem('linkToFolder');
   }
   handleCopyLink() {
-    console.log('Hello');
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      if (tabs && tabs[0] && tabs[0].url) {
-        this.linkURL = tabs[0].url;
+      if (tabs && tabs.length && tabs[0].url && tabs[0].title) {
+        this.ngZone.run(() => {
+          this.linkURL = tabs[0].url || '';
+          this.linkTitle = tabs[0].title || '';
+        });
       }
     });
   }
