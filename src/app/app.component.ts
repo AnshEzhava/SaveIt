@@ -70,9 +70,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.navService.setActivePage('addFolder');
   }
 
-  handleOpenLinks(folderName: string) {
-    console.log(`Open links for ${folderName}`);
-    // TODO: Implement logic to open links
+  handleOpenLinks(folder: Folder) {
+    folder.links.forEach((link) => {
+      chrome.tabs.create({ url: link.url });
+    });
   }
 
   handleAddLink(folderName: string) {

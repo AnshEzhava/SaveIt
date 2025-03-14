@@ -13,7 +13,7 @@
       <app-folder
         *ngFor="let folder of filteredFolders"
         [folderName]="folder.name"
-        (openLinksEvent)="handleOpenLinks(folder.name)"
+        (openLinksEvent)="handleOpenLinks(folder)"
         (addLinkEvent)="handleAddLink(folder.name)"
         (deleteFolderEvent)="handleDeleteFolder(folder.name)"
       ></app-folder>
