@@ -33,7 +33,7 @@ export class AddlinkComponent {
     }
     const folderName = localStorage.getItem('linkToFolder') || '';
     const newLink = {
-      title: linkTitle,
+      title: this.folderService.displayTitleFormatter(linkTitle),
       url: linkURL,
       displayURL: this.folderService.displayURLFormatter(
         linkURL,

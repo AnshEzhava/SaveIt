@@ -72,6 +72,14 @@ export class FolderService {
     return displayURL;
   }
 
+  displayTitleFormatter(title: string) {
+    const titleLength: number = 20;
+    if (title.length > titleLength) {
+      title = title.substring(0, titleLength) + '...';
+    }
+    return title;
+  }
+
   deleteLinksFromFolder(folderName: string, link: Link) {
     const currentFolders = this.foldersSubject.getValue();
     const updatedFolders = currentFolders.map((folder) => {
