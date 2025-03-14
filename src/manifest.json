@@ -6,6 +6,9 @@
   "action": {
     "default_popup": "index.html"
   },
+  "icons": {
+    "16": "assets/images/logo.png"
+  },
   "permissions": ["activeTab"],
   "host_permissions": ["<all_urls>"],
   "content_security_policy": {
