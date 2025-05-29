@@ -35,8 +35,7 @@
 .options {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 45px;
+  justify-content: flex-end;
 }
 
 .edit-img {

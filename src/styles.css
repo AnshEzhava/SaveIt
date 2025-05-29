@@ -32,6 +32,6 @@
 
 body {
   width: 280px;
-  height: 433px;
+  height: fit-content;
   background-color: var(--background-color);
 }
